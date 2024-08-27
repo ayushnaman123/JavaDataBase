@@ -1,21 +1,10 @@
-JDBC CRUD Operations Utility
-This repository contains a Java application designed to perform Create, Read, Update, and Delete (CRUD) operations on a relational database using JDBC (Java Database Connectivity).
-
 Key Features
-Unified Connection Management: Centralized utility class for managing database connections, including opening and closing connections.
-Configuration via Properties File: Uses an external properties file (db.properties) to manage database connection settings (URL, username, password), allowing dynamic updates without code modifications.
-JDBC 4.x Compatibility: Utilizes JDBC 4.x autoloading features to automatically load the appropriate database driver based on the JDBC URL.
-
+Manual Driver Management: Demonstrates explicit loading and registration of JDBC drivers using Class.forName().
+Connection Management: Creates and manages database connections manually through the DriverManager.
+Statement Execution: Uses Statement objects to execute SQL queries and updates. Handles both SELECT operations (returning ResultSet) and non-SELECT operations (returning int for update counts).
+Resource Management: Ensures proper handling and closing of Connection, Statement, and ResultSet objects to prevent resource leaks.
+Exception Handling: Includes comprehensive error handling for SQL operations to manage exceptions effectively.
 Components
-DatabaseUtil.java: Provides methods for establishing database connections and closing resources.
-db.properties: Configuration file for database connection details.
-CRUD Operations: Example code demonstrating how to perform CRUD operations using the utility class.
-
-Usage
-Configure Database:
-
-Update the db.properties file with your database connection information.
-Run the Application:
-
-Use the provided utility methods to connect to the database and execute CRUD operations.
-This setup ensures that database connection details can be updated seamlessly without stopping the application, leveraging JDBC 4.x features for improved driver management.
+DatabaseOperations.java: Contains methods for connecting to the database, executing SQL statements, and processing results.
+CRUD Operations: Example methods for performing CRUD operations, handling results, and managing exceptions.
+Resource Cleanup: Properly closes all database resources to ensure no resource leaks occur.
